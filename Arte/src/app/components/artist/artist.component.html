@@ -1,0 +1,34 @@
+<div class="container">
+    <h3 class="search">
+        Search Artists
+      </h3>
+
+    <form class="form-inline my>-2 my-lg-0">
+        <div class="search-container">
+      <input class="form-control mr-sm-2 search-input" type="text" placeholder="Search"  name= "searchStr" [(ngModel)]="searchStr" (keyup)= "searchMusic()">
+    </div>
+    </form>
+
+
+
+
+  <div  *ngIf="searchRes">
+    <div class="row">
+      <div class="col-sm card-box" *ngFor="let res of searchRes">
+        <div class="card   card-layout">
+          <h4 class="card-header "><a routerLink = '/artist/{{res.id}}'>{{res.name}}</a></h4>
+          <div class="card-body">
+            <h6 class="card-subtitle text-muted">Followers: {{res.followers.total}}</h6>
+          </div>
+          <img src="{{res.images[0].url}}" width="315" height="315">
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+</div>
+

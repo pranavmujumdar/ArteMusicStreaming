@@ -1,0 +1,19 @@
+.search-container{
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  width: 100%;
+
+  .search-input{
+    width:90%;
+  }
+}
+
+.fa-play-circle{
+  font-size: 18px;
+}
+
+.search{
+  margin-top: 2em;
+  text-align: center;
+ }

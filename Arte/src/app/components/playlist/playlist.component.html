@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="form-group">
+    <form class="form-inline my-2" (ngSubmit) = 'onSubmit()'>
+      <input type="text" name="playlistName" [(ngModel)]="playlistName" class="form-control create" placeholder="Create New Playlist" id="inputDefault">
+      <input type="submit" value="+" class="btn btn-primary">
+    </form>
+  </div>
+  <div class="row" *ngIf="searchResult">
+    <div class="col-md-6">
+      <div class="play-list">
+        <h2>Playlists</h2>
+        <ul class="list-group">
+          <a *ngFor="let res of searchResult">
+            <li (click)="getPlaylistTracks(res.id)"
+              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+              {{res.name}} <span class="badge badge-primary badge-pill">{{res.tracks.total}}</span>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="play-list">
+        <h2>Tracks</h2>
+        <div class="list-group">
+          <div *ngFor="let res of tracks">
+            <a href="{{res.track.external_urls.spotify}}" target="_blank"
+              class="list-group-item list-group-item-action flex-column align-items-start active">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{res.track.name}}</h5>
+              </div>
+              <small>Album: {{res.track.album.name}} | Popularity: {{res.track.popularity}}</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

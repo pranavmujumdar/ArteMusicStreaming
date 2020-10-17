@@ -1,0 +1,28 @@
+.mb-3, .my-1 {
+    margin-bottom: 1rem !important;
+    margin-top: 10px;
+    width: 25%;
+    height: 500px;
+    margin-left: 120px;
+    float : left;
+}
+
+.image {
+    height: 350px; width: 100%; display: block;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    padding: 10px;
+  }
+
+  .grig-item-1 {
+    justify-self: stretch;
+  }
+
+  .grid-item-2 {
+    margin-left: 30px;;
+  }
+
+

@@ -1,0 +1,16 @@
+.jumbotron{
+  background: none;
+}
+.button {
+    transition: all 0.3s ease-in-out
+}
+.button:hover {
+    color: rgba(0,0,0,0.8);
+    background-color: white;
+}
+.lead{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.2rem;
+}

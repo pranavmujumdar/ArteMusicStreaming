@@ -1,0 +1,21 @@
+.create {
+  width: 90%;
+}
+
+.my-2 {
+  margin-top:2em !important;
+}
+
+.play-list {
+  width: 90%;
+  a {
+    text-decoration: none;
+  }
+
+  div:nth-child(even) {
+    .list-group-item {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  }
+}

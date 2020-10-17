@@ -1,0 +1,42 @@
+<div class="container">
+        <div class="grid-container" id="album" *ngIf="album">
+           <div class="grid-item-1">
+              <div class="card mb" *ngIf="album.images.length > 0">
+                 <img class="image" src="{{album.images[0].url}}" alt="Card image">
+                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                       <h5 *ngIf="album.artists.length > 0"><span *ngFor="let artist of album.artists">
+                           {{artist.name}}
+                          </span>
+                       </h5>
+                    </li>
+                    <li class="list-group-item">
+                       <h5><span >
+                           {{album.name}}
+                          </span>
+                       </h5>
+                    </li>
+                    <li class="list-group-item">
+                       <h6><span>
+                           Release Date: {{album.release_date}}
+                          </span>
+                       </h6>
+                    </li>
+                 </ul>
+                 <!--<button type="button" class="btn btn-success">View in Spotify</button>-->
+                 <a class="btn btn-success" href="{{album.external_urls.spotify}}" target="_blank">View in Spotify</a>
+              </div>
+           </div>
+           <div class="grid-item-2">
+              <div class="album-tracks">
+                 <h3>Album Tracks</h3>
+                 <div *ngFor="let track of album.tracks.items">
+                    <div class="tracklist">
+                       <h5>{{track.track_number}} - {{track.name}}</h5>
+                       <a class="btn-link" href="{{track.external_urls.spotify}}" target="_blank">Listen Track</a>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
